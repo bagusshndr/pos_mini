@@ -1,0 +1,1 @@
+<label for="">{{ $responseBody->results->nama_produk }}</label>

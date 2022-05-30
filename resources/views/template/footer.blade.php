@@ -51,3 +51,20 @@
     });
   });
 </script>
+<script>
+  $(document).on("click", ".buttonedit", function () {
+     var UserName = $(this).data('id');
+     var nama_produk = $(this).data('nama_produk');
+     var deskripsi_produk = $(this).data('deskripsi_produk');
+     var harga_produk = $(this).data('harga_produk');
+     var nama_produk = $(this).data('nama_produk');
+     var gambar_produk = $(this).data('gambar_produk');
+     var status = $(this).data('status');
+     $(".modal-body #product_name").val( nama_produk );
+     $(".modal-body #product_description").val( deskripsi_produk );
+     $(".modal-body #product_price").val( harga_produk );
+     $(".modal-body #category_id").val( nama_produk );
+     $(".modal-body #photo").val( gambar_produk );
+     $(".modal-body #is_active").val( status );
+  });
+</script>

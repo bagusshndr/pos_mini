@@ -20,8 +20,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'HomeController@index')->name('home.index');
 Route::get('/product', 'Produk_Controller@index')->name('produk.index');
 Route::get('/product/create', 'Produk_Controller@create')->name('produk.create');
+// Route::get('/product/{id}', 'Produk_Controller@getById');
+Route::post('/product', 'Produk_Controller@postRequest')->name('produk.store');
+Route::delete('/product/{id}', 'Produk_Controller@deleteRequest')->name('produk.delete');
 Route::get('/category', 'kategori_Controller@index')->name('category.index');
-Route::get('/product/create', 'Category_Controller@create')->name('category.create');
+// Route::get('/product/create', 'Kategori_Controller@create')->name('category.create');
 // Route::post('/product', 'Produk_Controller@index')->name('produk.create');
 // Route::get('/product/create', 'Produk_Controller@index')->name('produk.create');
 

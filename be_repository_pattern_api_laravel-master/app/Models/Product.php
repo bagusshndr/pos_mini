@@ -14,8 +14,12 @@ class Product extends Model
     protected $table = "tbl_produk";
     
     protected $fillable = [
-        'nama_produk', 'deskripsi_produk', 'harga_produk', 'kategori_id', 'gambar_produk', 'status', 'created_at'
+        'id','nama_produk', 'deskripsi_produk', 'harga_produk', 'kategori_id', 'gambar_produk', 'status', 'created_at', 'updated_at'
     ];
+
+    public function category(){
+        return $this->belongsTo('tbl_kategori');
+    }
 
 
 

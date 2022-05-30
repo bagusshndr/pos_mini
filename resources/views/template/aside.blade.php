@@ -25,19 +25,19 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
               <li class="nav-item">
-                <a href="{{ route('home.index')}}" class="nav-link active">
+                <a href="{{ route('home.index')}}" class="nav-link {{ request()->is('/') ? 'active' : '' }}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Dashboard</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('produk.index')}}" class="nav-link">
+                <a href="{{ route('produk.index')}}" class="nav-link {{ request()->is('product') ? 'active' : '' }}">
                   <i class="fas fa-edit nav-icon"></i>
                   <p>Produk</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('category.index')}}" class="nav-link">
+                <a href="{{ route('category.index')}}" class="nav-link {{ request()->is('category') ? 'active' : '' }}">
                   <i class="fas fa-edit nav-icon"></i>
                   <p>Kategori</p>
                 </a>

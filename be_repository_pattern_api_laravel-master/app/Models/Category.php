@@ -17,6 +17,9 @@ class Category extends Model
         'nama_kategori'
     ];
 
+    public function product(){
+        return $this->hasMany('tbl_product');
+    }
 
 
     /**

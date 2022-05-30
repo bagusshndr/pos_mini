@@ -17,7 +17,7 @@ class CategoryRepository implements CategoryInterface
     {
         try {
             $category = Category::all();
-            return $this->success("All Product", $category);
+            return $this->success("All Category", $category);
         } catch(\Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
         }

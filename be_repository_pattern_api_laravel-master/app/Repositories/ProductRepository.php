@@ -16,7 +16,9 @@ class ProductRepository implements ProductInterface
     public function getAllProduct()
     {
         try {
-            $product = Product::all();
+            // $product = Product::all();
+            $product = Product::join('tbl_kategori', 'tbl_produk.kategori_id', '=', 'tbl_kategori.id')
+               ->get(['tbl_produk.id','tbl_produk.nama_produk','tbl_produk.deskripsi_produk','tbl_produk.harga_produk','tbl_produk.gambar_produk','tbl_produk.status', 'tbl_kategori.nama_kategori']);
             return $this->success("All Product", $product);
         } catch(\Exception $e) {
             return $this->error($e->getMessage(), $e->getCode());
@@ -59,8 +61,8 @@ class ProductRepository implements ProductInterface
 
             DB::commit();
             return $this->success(
-                $id ? "User updated"
-                    : "User created",
+                $id ? "Product updated"
+                    : "Product created",
                 $product, $id ? 200 : 201);
         } catch(\Exception $e) {
             DB::rollBack();
