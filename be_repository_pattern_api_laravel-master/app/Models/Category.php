@@ -14,7 +14,7 @@ class Category extends Model
 
     protected $table = "tbl_kategori";
     protected $fillable = [
-        'nama_kategori'
+        'id','nama_kategori', 'created_at', 'updated_at'
     ];
 
     public function product(){

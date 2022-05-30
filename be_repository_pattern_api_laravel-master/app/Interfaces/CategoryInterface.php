@@ -31,8 +31,8 @@ interface CategoryInterface
      * @param   \App\Http\Requests\CategoryRequest    $request
      * @param   integer                           $id
      * 
-     * @method  POST    api/Categorys       For Create
-     * @method  PUT     api/Categorys/{id}  For Update     
+     * @method  POST    api/Category   For Create
+     * @method  PUT     api/Category/{id}  For Update     
      * @access  public
      */
     public function requestCategory(CategoryRequest $request, $id = null);

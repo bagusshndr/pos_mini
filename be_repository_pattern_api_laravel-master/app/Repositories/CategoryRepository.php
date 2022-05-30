@@ -50,19 +50,12 @@ class CategoryRepository implements CategoryInterface
             if($id && !$category) return $this->error("No category with ID $id", 404);
 
             $category->nama_kategori = $request->nama_kategori;
-            // Remove a whitespace and make to lowercase
-            
-            // I dont wanna to update the password, 
-            // Password must be fill only when creating a new user.
-            // if(!$id) $category->password = \Hash::make($request->password);
-
-            // Save the user
             $category->save();
 
             DB::commit();
             return $this->success(
-                $id ? "User updated"
-                    : "User created",
+                $id ? "Category updated"
+                    : "Category created",
                 $category, $id ? 200 : 201);
         } catch(\Exception $e) {
             DB::rollBack();
